@@ -29,15 +29,22 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let name = variable.name == null ? "Nombre" : variable.name;
+  let lastname = variable.lastname == null ? "Apellido" : variable.lastname;
+  let role = variable.role == null ? "Role" : variable.role;
+  let city = variable.city == null ? "City" : variable.city;
+  let country = variable.country == null ? "Country" : variable.country;
+  let twitter = variable.twitter == null ? "Twitter" : variable.twitter;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>${name} ${lastname}</h1>
+          <h2>${role}</h2>
+          <h3>${city}, ${country}</h3>
           <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/${twitter}"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
